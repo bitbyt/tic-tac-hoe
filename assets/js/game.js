@@ -121,11 +121,11 @@ function init() {
         if(buttonValue === 'O'){
             alert('Game Over, Player 2 wins!');
             gameStatus.innerHTML = "Player 2 wins!";
-            resetBoard();
+            location.reload();
         }else {
             alert('Game Over, Player 1 wins!');
             gameStatus.innerHTML = "Player 1 wins!";
-            resetBoard();
+            location.reload();
         }
     }
 
@@ -159,7 +159,7 @@ function init() {
             //boardCount stores the number of spaces already filled in the board
             //If value is == 9 and not a winning combination, it is a tie.
             alert('It is a tie!');
-            resetBoard();
+            location.reload();
         }else {
             console.log('No winner yet!');
         }
