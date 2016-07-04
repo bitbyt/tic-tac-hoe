@@ -4,6 +4,29 @@
 var gameArray = [];
 var gameBoard = document.getElementsByClassName('box');
 var gameStatus = document.querySelector('h4');
+var resetButton = document.getElementById('ctrl-btn');
+
+function hasClass(el, className) {
+  if (el.classList)
+    return el.classList.contains(className)
+  else
+    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
+}
+
+function addClass(el, className) {
+  if (el.classList)
+    el.classList.add(className)
+  else if (!hasClass(el, className)) el.className += " " + className
+}
+
+function removeClass(el, className) {
+  if (el.classList)
+    el.classList.remove(className)
+  else if (hasClass(el, className)) {
+    var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
+    el.className=el.className.replace(reg, ' ')
+  }
+}
 
 var winningCombinations = [
   // Horizontals
@@ -11,7 +34,7 @@ var winningCombinations = [
   [3, 4, 5],
   [6, 7, 8],
 
-  // Verticals
+  // Verticals d
   [0, 3, 6],
   [1, 4, 7],
   [2, 5, 8],
@@ -50,6 +73,17 @@ var playerTurn = true;
 //score counter
 
 //clear board
+
+resetButton.addEventListener('click', resetBoard);
+
+function resetBoard() {
+  for ( var i = 0; i < gameBoard.length; i++ ) {
+    gameBoard[i].innerHTML = "";
+    removeClass(gameBoard[i], 'circle');
+    removeClass(gameBoard[i], 'cross');
+    gameStatus.innerHTML = "A simple game of tic tac toe";
+  }
+}
 
 //basic ai
 
