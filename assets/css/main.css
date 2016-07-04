@@ -162,7 +162,7 @@ body {
   text-transform: capitalize;
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn-primary:active {
   background: #27D4B5;
   border: 2px solid #27D4B5;
   color: #f5f5f5;
@@ -206,18 +206,10 @@ body {
   transform: rotate(-45deg);
 }
 
-.circle:hover {
+.circle:hover, .cross:hover {
   cursor: not-allowed;
 }
 
-.cross:hover {
-  cursor: not-allowed;
-}
-
-.circle:hover:after {
-  background: none;
-}
-
-.cross:hover:after {
+.circle:hover:after, .circle:active:after, .cross:hover:after, .cross:active:after {
   background: none;
 }
