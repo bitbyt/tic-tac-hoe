@@ -37,6 +37,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "brandon-grotesque", sans-serif;
+  letter-spacing: 0.1rem;
 }
 
 .container {
@@ -47,6 +48,9 @@ h1, h2, h3, h4, h5, h6 {
 
 #title {
   color: #27D4B5;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
 }
 
 .info {
