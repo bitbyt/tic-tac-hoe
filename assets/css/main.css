@@ -1,16 +1,48 @@
 /* back to reality  */
 
 body {
-  background-color: #f5f5f5;
   font-family: 'Lato', sans-serif;
   color: #666f6f;
   text-align: center;
+
+  background: linear-gradient(230deg,#a24bcf,#4b79cf,#4bc5cf);
+  background-size: 300% 300%;
+
+  -webkit-animation: AnimationName 28s ease infinite;
+  -moz-animation: AnimationName 28s ease infinite;
+  -o-animation: AnimationName 28s ease infinite;
+  animation: AnimationName 28s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 73%}
+    50%{background-position:100% 28%}
+    100%{background-position:0% 73%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 73%}
+    50%{background-position:100% 28%}
+    100%{background-position:0% 73%}
+}
+@-o-keyframes AnimationName {
+    0%{background-position:0% 73%}
+    50%{background-position:100% 28%}
+    100%{background-position:0% 73%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 73%}
+    50%{background-position:100% 28%}
+    100%{background-position:0% 73%}
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "brandon-grotesque", sans-serif;
 }
 
 .container {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 3rem 1rem;
 }
 
 #title {
@@ -18,7 +50,7 @@ body {
 }
 
 .info {
-  transition: all .5s ease-in-out;
+  color: #c5c5c5;
 }
 
 .player-one {
@@ -69,7 +101,7 @@ body {
 
 .grid {
   font-size: 0;
-  margin-top: 40px;
+  margin-top: 1rem;
 }
 
 .box {
@@ -172,7 +204,7 @@ body {
 /* icons */
 .circleIcon {
   border-radius: 50%;
-  box-shadow: 0 0 0 2px #2A93D5;
+  box-shadow: 0 0 0 2px #04D0FF;
   transition: all .5s ease-in-out;
 }
 
@@ -189,7 +221,7 @@ body {
   top: 50%;
   left: 0;
   margin-top: -1px;
-  background: #FE424D;
+  background: #FF5169;
 }
 .crossIcon::before {
   -webkit-transform: rotate(45deg);
