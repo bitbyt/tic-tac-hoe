@@ -14,6 +14,13 @@ function init() {
   var gameBoard = document.getElementsByClassName('box');
   var gameStatus = document.querySelector('h4');
   var resetButton = document.getElementById('ctrl-btn');
+  var playerOneScore = document.getElementById('playerOneScore');
+  var playerTwoScore = document.getElementById('playerTwoScore');
+  var playerOneScoreCount = 0;
+  var playerTwoScoreCount = 0;
+
+  playerOneScore.innerHTML = playerOneScoreCount;
+  playerTwoScore.innerHTML  = playerTwoScoreCount;
 
   var addCross = '<div id="playerOne" class="content"><i class="crossIcon" aria-hidden="fa"></i></div>';
   var addCircle = '<div id="playerTwo" class="content"><i class="circleIcon"></i></div>';
@@ -55,14 +62,14 @@ function init() {
       this.classList.add('cross');
       this.innerHTML = addCross;
       setMove('X', this.id);
-      checkForWinner();
       switchPlayer('Player 2');
+      checkForWinner();
     } else if (currentPlayer === 'Player 2' && unmarkedBox) {
       this.classList.add('circle');
       this.innerHTML = addCircle;
       setMove('O', this.id);
-      checkForWinner();
       switchPlayer('Player 1');
+      checkForWinner();
     } else {
         alert('Whoops, this box has been marked.');
     }
@@ -125,12 +132,16 @@ function init() {
 
   function alertWinner(buttonValue){
       if(buttonValue === 'O'){
-          alert('Game Over, Player 2 wins!');
           gameStatus.innerHTML = "Player 2 wins!";
+          playerTwoScoreCount++;
+          playerTwoScore.innerHTML = playerTwoScoreCount;
+          alert('Game Over, Player 2 wins!');
           resetBoard();
       }else {
-          alert('Game Over, Player 1 wins!');
           gameStatus.innerHTML = "Player 1 wins!";
+          playerOneScoreCount++;
+          playerOneScore.innerHTML = playerOneScoreCount;
+          alert('Game Over, Player 1 wins!');
           resetBoard();
       }
   }

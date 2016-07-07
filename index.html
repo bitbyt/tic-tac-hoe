@@ -15,15 +15,29 @@
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
   </head>
   <body>
-    <div class="container">
-      <header>
+    <div class="container row">
+      <header class="columns five">
         <h2 id="title">TicTacToe.io</h2>
         <h4 class="info">A simple game of tic tac toe</h4>
-        <div class="scoreboard">
-
+        <input id="toggle" type="checkbox">
+        <label for="toggle">Hide score</label>
+        <div id="expand">
+          <section>
+            <div class="scoreboard">
+              <h5>Score</h5>
+              <div class="player-score-1">
+                <h6>Player One</h6>
+                <h5 id="playerOneScore"></h5>
+              </div>
+              <div class="player-score-2">
+                <h6>Player Two</h6>
+                <h5 id="playerTwoScore"></h5>
+              </div>
+            </div>
+          </section>
         </div>
       </header>
-      <main>
+      <main class="columns seven">
         <div class="grid">
           <div id="b1" class="box"></div>
           <div id="b2" class="box"></div>

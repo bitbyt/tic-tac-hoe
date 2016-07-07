@@ -4,6 +4,7 @@ body {
   font-family: 'Lato', sans-serif;
   color: #666f6f;
   text-align: center;
+  font-size: 80%;
 
   background: linear-gradient(230deg,#a24bcf,#4b79cf,#4bc5cf);
   background-size: 300% 300%;
@@ -38,23 +39,25 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "brandon-grotesque", sans-serif;
   letter-spacing: 0.1rem;
+  font-weight: 500;
 }
 
 .container {
-  max-width: 600px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 3rem 1rem;
 }
 
-#title {
+h2 {
   color: #27D4B5;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 0.2rem;
 }
 
 .info {
-  color: #c5c5c5;
+  color: #e5e5e5;
+  margin-bottom: 0;
 }
 
 .player-one {
@@ -105,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .grid {
   font-size: 0;
-  margin-top: 1rem;
+  margin-top: 1.4rem;
 }
 
 .box {
@@ -120,10 +123,10 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
-.box:hover:after, .box:focus:after {
+.box:hover:after, .box:active:after {
   background-color: #e5e5e5;
 }
-.box:after, .box:active:after {
+.box:after, .box:focus:after {
   content: "";
   display: block;
   padding-bottom: 100%;
@@ -188,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 5rem;
   border-radius: 2.5rem;
   border: 2px solid #27D4B5;
-  margin: 40px auto 0 auto;
+  margin: 2rem auto 0 auto;
   background: none;
   color: #27D4B5;
   cursor: pointer;
@@ -248,4 +251,89 @@ h1, h2, h3, h4, h5, h6 {
 
 .circle:hover:after, .circle:active:after, .cross:hover:after, .cross:active:after {
   background: none;
+}
+
+.aside {
+  postion: relative;
+}
+
+input {
+  display: none;
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+label {
+  display: block;
+  padding: 0;
+  text-align: center;
+  color: #e5e5e5;
+  font-size: 1.5rem;
+}
+
+label::before {
+  content: "+";
+  vertical-align: text-top;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 3px;
+  background: none;
+}
+
+#expand {
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.5s;
+}
+
+#toggle:checked ~ #expand {
+  height: 100%;
+}
+#toggle:checked ~ label::before {
+  content: "x";
+}
+
+@media (min-width: 768px) {
+  label {
+    display: none;
+    visibility: hidden;
+  }
+
+  #expand {
+    height: 100%;
+    overflow: visible;
+  }
+  .hidden-lg {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .hidden-md {
+    visibility: hidden;
+  }
+}
+
+.scoreboard {
+  border: 2px solid #27D4B5;
+  border-radius: 8px;
+  display: block;
+  padding: 1.4rem;
+  color: #e5e5e5;
+  margin-top: 2rem;
+}
+
+.scoreboard > div {
+  width: 48%;
+  display: inline-block;
+}
+
+.player-score-1 {
+  color: #FF5169;
+}
+
+.player-score-2 {
+  color: #04D0FF;
 }
